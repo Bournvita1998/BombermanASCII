@@ -209,7 +209,7 @@ def UpdateBombs():
 				rand = random.random()
 				if rand < 0.1:
 					gameArray[i] = 5
-				elif rand < 0.28:
+				elif rand < 0.18:
 					gameArray[i] = 6
 				else:
 					gameArray[i] = 0
