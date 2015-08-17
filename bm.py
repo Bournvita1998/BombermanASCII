@@ -207,9 +207,9 @@ def UpdateBombs():
 		if gameArray[i] >= 16:
 			if i in brokenBoxes:
 				rand = random.random()
-				if rand < 0.1:
+				if rand < 0.2:
 					gameArray[i] = 5
-				elif rand < 0.28:
+				elif rand < 0.48:
 					gameArray[i] = 6
 				else:
 					gameArray[i] = 0
