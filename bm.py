@@ -5,20 +5,24 @@ import msvcrt, os, time, sys, random, math
 
 random.seed()
 
-columns = 15
-lines = 15
+columns = 15		#\
+									# adjustable, odd numbers only
+lines = 15			#/  
+
 score = 0
-pPos = 0
+pPos = 0				#top left corner starting position
+
 explosions = range(10,16)
 bombs = range(20,33)
-spf = 0.25
+
+spf = 0.25			#seconds per frame
 bombPower = 2
 maxBombs = 1
 activeBombs = []
 activeExplosions = []
-brokenBoxes = []
+brokenBoxes = [] 
 activeBombCount = 0
-percentBoxes = 0.6
+percentBoxes = 0.6			# percent of screen filled with destructible boxes
 
 # 0 = AIR, 1 = BLOCK, 2 = DESTRUCTIBLE_BLOCK, 3 = PLAYER_BOMB, 4 = PLAYER,
 # 5 = POWERUP_BOMB_STRENGTH, 6 = POWERUP_BOMB_AMOUNT, 10-15 = EXPLOSION, 20-32 = BOMB
@@ -217,6 +221,7 @@ def UpdateBombs():
 			else:
 				gameArray[i] = 0
 			activeExplosions.remove(i)
+			
 	for i in activeBombs:
 		gameArray[i] += 1
 		if gameArray[i] >= 32:
